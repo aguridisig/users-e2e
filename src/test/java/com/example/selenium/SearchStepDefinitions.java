@@ -24,18 +24,19 @@ public class SearchStepDefinitions
 
     @And("I type {string}")
     public void iType(String searchQuery) {
+        webDriver.findElement( By.id( "L2AGLb" ) ).click();
         webDriver.findElement( By.name("q")).sendKeys(searchQuery);
     }
 
     @And("I hit Enter")
     public void iHitEnter() {
-        webDriver.findElement(By.name("q")).sendKeys( Keys.ENTER);
+        webDriver.findElement(By.name("q")).submit();
     }
 
     @Then("I should be shown the results from my query")
     public void iShouldBeShownTheResultsFromMyQuery() {
         try {
-            webDriver.findElement(By.xpath("//*[contains(text(), 'Search Results')]"));
+            webDriver.findElement(By.xpath("//*[contains(text(), 'Vídeos')]"));
         } catch ( NoSuchElementException e) {
             throw new AssertionError("Result Page not displayed");
         }
