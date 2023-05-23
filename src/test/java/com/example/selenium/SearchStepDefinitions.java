@@ -1,4 +1,4 @@
-package com.example.userse2e;
+package com.example.selenium;
 
 import java.net.URISyntaxException;
 
